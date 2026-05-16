@@ -384,20 +384,30 @@ body {
   height: 140px;
   position: relative;
   cursor: pointer;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
   perspective: 1000px;
   border-radius: var(--card-radius);
 }
-.card:hover:not(.flipped):not(.matched) {
-  transform: translateY(-4px) scale(1.03);
+
+.card-inner {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+  border-radius: var(--card-radius);
+  transform: translateZ(0);
 }
 
-.card.flip {
+.card:hover:not(.flip):not(.matched) .card-inner {
+  transform: translateY(-4px) scale(1.03);
+}
+.card.flip .card-inner {
   transform: rotateY(180deg);
 }
-.card.flip.card-hover-paused {
+.card.matched .card-inner {
   transform: rotateY(180deg);
+}
+.card.peeking .card-inner {
+  transform: rotateY(180deg) !important;
 }
 
 .front_face,
@@ -407,6 +417,7 @@ body {
   border-radius: var(--card-radius);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
   overflow: hidden;
 }
 
@@ -460,8 +471,8 @@ body {
   box-shadow: var(--matched-glow);
   background: color-mix(in srgb, var(--surface) 80%, #ffcb0520);
 }
-.card.matched {
-  animation: matchPop 0.4s ease;
+.card.matched .card-inner {
+  animation: matchPop 0.4s ease forwards;
 }
 @keyframes matchPop {
   0% {
@@ -473,11 +484,6 @@ body {
   100% {
     transform: rotateY(180deg) scale(1);
   }
-}
-
-/* Peek powerup: show all cards */
-.card.peeking {
-  transform: rotateY(180deg) !important;
 }
 
 /* ===================== MESSAGE OVERLAY ===================== */

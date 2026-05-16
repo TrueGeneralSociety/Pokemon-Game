@@ -117,12 +117,14 @@ async function loadGameCards(numPairs) {
 function buildCard(pokemon, index) {
   const $card = $(`
     <div class="card" data-index="${index}" data-name="${pokemon.name}">
-      <div class="front_face">
-        <img src="${pokemon.image}" alt="${pokemon.name}">
-        <span class="pokemon-name">${pokemon.name}</span>
-      </div>
-      <div class="back_face">
-        <img src="back.webp" alt="card back">
+      <div class="card-inner">
+        <div class="front_face">
+          <img src="${pokemon.image}" alt="${pokemon.name}">
+          <span class="pokemon-name">${pokemon.name}</span>
+        </div>
+        <div class="back_face">
+          <img src="back.webp" alt="card back">
+        </div>
       </div>
     </div>
   `);
