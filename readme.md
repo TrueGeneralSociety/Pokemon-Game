@@ -1,7 +1,6 @@
 Self-graded Assignment 3 Checklist
 
-    Criteria
-    ========
+# Criteria
 
 /10 marks
 
@@ -30,5 +29,6 @@ Self-graded Assignment 3 Checklist
 Total Grade:  
  /70 (Total grade out of 70, first item is 10 marks, 2 marks each for next 4 items, 7 marks each for next 6 items and 10 marks for last item)
 
-AI acknowledgement:  
+# AI acknowledgement:
+
 The UI and the CSS were almost entirely designed by Claude AI with only small changes and corrections being made by me. The logic and functionality also took assistance from Claude AI to complete.
