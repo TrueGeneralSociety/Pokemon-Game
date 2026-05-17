@@ -7,7 +7,7 @@
 const DIFFICULTIES = {
   easy: { pairs: 3, time: 60 },
   medium: { pairs: 6, time: 90 },
-  hard: { pairs: 10, time: 120 },
+  hard: { pairs: 12, time: 120 },
 };
 
 // Game state variables
